@@ -1,0 +1,13 @@
+<template name="layout">
+
+  {{#if currentUser}}
+    <a href="{{pathFor 'signOut'}}">Sign-Out</a>
+  {{else}}
+    <a href="{{pathFor 'signUp'}}">Sign-Up</a>
+    <a href="{{pathFor 'signIn'}}">Sign-In</a>
+  {{/if}}
+
+  {{> yield}}
+
+  <p>THis is our footer</p>
+</template>
