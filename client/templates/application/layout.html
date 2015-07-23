@@ -1,13 +1,44 @@
 <template name="layout">
+    <header>
+        <div class="site-logo">
+            <a class="site-title" href="#">Roadside Market</a>
+        </div>
 
-  {{#if currentUser}}
-    <a href="{{pathFor 'signOut'}}">Sign-Out</a>
-  {{else}}
-    <a href="{{pathFor 'signUp'}}">Sign-Up</a>
-    <a href="{{pathFor 'signIn'}}">Sign-In</a>
-  {{/if}}
+        <nav class="main-menu">
+            <a href="">About</a>
+            <a href="">Find a Stand</a>
 
-  {{> yield}}
+            {{#if currentUser}}
+                <a href="{{pathFor 'signOut'}}">Sign-Out</a>
+            {{else}}
+                <a href="{{pathFor 'signUp'}}">Sign-Up</a>
+                <a href="{{pathFor 'signIn'}}">Sign-In</a>
+            {{/if}}
 
-  <p>THis is our footer</p>
+            <a href="">Profile</a>
+        </nav>
+    </header>
+
+    <main>
+        {{> yield}}
+    </main>
+
+    <footer>
+        <aside>
+            <h3>About</h3>
+
+            <p>
+                This is a blurb about Roadside Market. Buzzwords.
+            </p>
+        </aside>
+
+        <aside>
+            <h3>Links</h3>
+            <ul>
+                <li>Roadside Markets</li>
+                <li>FAQ</li>
+                <li>Privacy Policy</li>
+            </ul>
+        </aside>
+    </footer>
 </template>
